@@ -1,0 +1,45 @@
+ALGORITHM checkpointAlgo
+VAR
+    UPP,c:CHAR;
+    p : STRING;
+    k,i,j,vowels : INTEGER=0;
+    words: INTEGER=1;
+BEGIN
+  
+    WHILE (TRUE) DO
+        write('Type a CHAR :');
+        read(c);
+
+        IF (C='.') THEN
+            BREAK
+        END_IF
+         p:=p+c;
+    END_WHILE
+
+    WHILE(TRUE) DO
+        IF (p[i]='.') THEN
+            BREAK;
+        ELSE
+           i:= i + 1;
+        END_IF
+
+    END_WHILE
+    FOR j FROM 0 TO i STEP step  DO
+        IF (p[j]=' ') THEN
+            words := words + 1;
+        END_IF
+    END_FOR
+
+    FOR k FROM 0 TO i STEP step  DO
+        UPP := UPPERCASE(p[k]);
+        IF (UPP='A') OR (UPP='E') OR (UPP='I') OR (UPP='O') OR (UPP='E') THEN
+          vowels := vowels + 1;
+        END_IF
+    END_FOR
+
+    write('THE SENTENCE IS : ', p);
+    write('The length of the sentence :', i);
+    write('The number of words in the sentence : ', words);
+    write('The number of vowels in the sentence : ', vowels);
+
+END
